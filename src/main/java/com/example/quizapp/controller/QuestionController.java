@@ -19,8 +19,7 @@ public class QuestionController {
         return questionService.getAllQuestions();
     }
     @GetMapping("category/{category}")
-    public List<Question> getQuestionByCategory(@PathVariable String category) {
-        System.out.println(category);
+    public ResponseEntity<List<Question>> getQuestionByCategory(@PathVariable String category) {
         return questionService.getQuestionsByCategory(category);
     }
     @PostMapping("add")
